@@ -97,3 +97,14 @@ test "luke viaja a hurlingham en el convertible convertido en chatarra" {
     carrera.iniciar()
     assert.equals(alambiqueVeloz, carrera.ganador())
   }
+  test "carrera en hurlingham, ganan pierre y patan" {
+    luke.vehiculo(alambiqueVeloz)
+    carrera.cambiarCiudad(hurlingham)
+    carrera.inscribir(alambiqueVeloz)
+    carrera.inscribir(moto)
+    carrera.inscribir(chatarra)
+    carrera.inscribir(antigualla)
+    carrera.inscribir(autoPierre)
+    carrera.iniciar()
+    assert.equals(autoPierre, carrera.ganador())
+  }

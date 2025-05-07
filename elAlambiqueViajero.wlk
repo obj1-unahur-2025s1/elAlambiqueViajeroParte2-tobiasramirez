@@ -20,13 +20,13 @@ object alambiqueVeloz {
     const rapido = true
     var combustible = 20
     const consumoPorViaje = 10
-    const patente = "AB123JK"
+    const patente = "BB123JK"
     method puedeFuncionar() = combustible >= consumoPorViaje
     method desgaste() {
         combustible = combustible - consumoPorViaje
     }
     method rapido() = rapido
-    method patenteValida() = patente.head() == "A"
+    method patenteValida() = patente.size() == 8
     method velocidad() = combustible * 3.5
 }
 

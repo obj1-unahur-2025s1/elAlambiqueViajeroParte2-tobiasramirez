@@ -172,8 +172,8 @@ object profesorLocovich {
 
 object carrera {
   var ciudadCarrera = null
-  const inscriptos = []
-  const rechazados  = []
+  var inscriptos = []
+  var rechazados  = []
   method cambiarCiudad(ciudad) {ciudadCarrera = ciudad}
   method inscribir(auto) {
     if (ciudadCarrera.puedeLlegar(auto)) {
@@ -189,6 +189,14 @@ object carrera {
   method inscriptos() = inscriptos
   method rechazados() = rechazados
   method ganador() = inscriptos.max({x=>x.velocidad()})
+  method replanificacion(ciudad) {
+    ciudadCarrera = ciudad
+    const nueva = rechazados + inscriptos
+    inscriptos.clear()
+    rechazados.clear()
+    nueva.forEach({a=>self.inscribir(a)})
+
+  }
 
   
 }
